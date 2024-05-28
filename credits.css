@@ -1,0 +1,103 @@
+/*Slap an overlay in the middle*/
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/*credits stuff*/
+[class^="mod-image"] {
+  clear: both;
+  height: 150px;
+  width: 150px;
+}
+
+#mods {
+  display: inline-block;
+}
+
+#mods img {
+  background: #1f4ff4; /* #fa1d1e; */
+  background-image: url('/img/modIcons/backing.png');
+  background-size: cover;
+  margin-bottom: 20px;
+  border: 3px solid grey;
+}
+
+.mod-align-left {
+  float: left;
+}
+.mod-align-left ul {
+  float: right;
+  padding-right: 10px; /*need this for mobile text scaling??*/
+}
+
+.mod-align-right {
+  float: right;
+}
+.mod-align-right ul {
+  float: left;
+  padding-right: 10px;
+}
+
+.mod-align {
+  float: none;
+}
+
+/*dropdown stuff*/
+body {
+  font-family: Arial, sans-serif;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f1f1f1;
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+
+.dropdown-toggle img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100%;
+  border: 1px solid #ccc;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.dropdown-content div {
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-content div:hover {
+  background-color: #f1f1f1;
+}

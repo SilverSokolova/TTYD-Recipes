@@ -1,0 +1,59 @@
+p {
+  text-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+
+h1 {
+  text-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+
+h2 {
+  text-align: center;
+  clear: both;
+  float: none;
+  text-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+
+a {
+  color: green;
+}
+
+a:visited {
+  color: yellow; /* Color for visited links */
+  font-weight: bold; /* Make it bold to stand out more */
+}
+
+/*Center everything and add a background*/
+body {
+  background-image: url('/img/bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-position: center center;
+  position: relative;
+  z-index: -2;
+  overflow: hidden;
+}
+
+/*Slap an overlay in the middle*/
+.overlay {
+  position: absolute;
+  top: 200px;
+  left: 10%;
+  width: 80%;
+  height: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.item-align-left {
+  float: left;
+}
+
+.item-align-right {
+  float: right;
+}
