@@ -45,13 +45,17 @@ body {
   top: 200px;
   left: 10%;
   width: 80%;
-  height: 50%;
+  height: 80%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: -1;
 }
 
 .item-align-left {
   float: left;
+}
+
+.item-align-left img {
+  margin-top: -30px;
 }
 
 .item-align-right {
