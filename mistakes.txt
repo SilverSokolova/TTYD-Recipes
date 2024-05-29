@@ -1,4 +1,4 @@
-
+pow block
 dried shroom
 horsetail
 fright mask
@@ -7,6 +7,8 @@ sleepy sheep
 courage shell
 thunder bolt
 ice storm
+inn coupon
+shooting star
 
 
 mushroom fry
@@ -14,4 +16,4 @@ mushroom steak
 honey mushroom
 spicy soup
 fresh juice
-inn coupon
+koopa tea

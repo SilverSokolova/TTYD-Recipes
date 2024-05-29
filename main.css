@@ -42,10 +42,10 @@ body {
 /*Slap an overlay in the middle*/
 .overlay {
   position: absolute;
-  top: 200px;
+  top: 150px;
   left: 10%;
   width: 80%;
-  height: 80%;
+  height: 70%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: -1;
 }

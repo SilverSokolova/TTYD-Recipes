@@ -1,2 +1,2 @@
 # TTYD-Recipes
- Interactive cookbook webpage for 'Paper Mario: The Thousand-Year Door' on Nintendo Switch!
+ Interactive cooking recipe webpage for 'Paper Mario: The Thousand-Year Door' on Nintendo Switch!
