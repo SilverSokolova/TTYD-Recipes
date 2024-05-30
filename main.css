@@ -50,14 +50,27 @@ body {
   z-index: -1;
 }
 
-.item-align-left {
-  float: left;
+.item {
+  display: inline-block;
+  vertical-align: middle;
 }
 
-.item-align-left img {
-  margin-top: -30px;
+.item p {
+  background-color: rgba(230, 229, 146, 0.3);
+  word-wrap: break-word;
+  max-width: 230px;
 }
 
-.item-align-right {
+.item img {
+  vertical-align: middle;
+}
+
+.item-right {
+  display: inline-block;
+  vertical-align: middle;
   float: right;
+}
+
+.item-right img {
+  vertical-align: middle;
 }

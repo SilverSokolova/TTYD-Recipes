@@ -15,32 +15,28 @@
     <div class="overlay"></div>
     <section id="mods">
       <h2>TTYD (Switch) Interactive Cookbook<br>For help, message 'silversokolova' on Discord!<br><br><strong>DM me videos of you cooking a recipe,<br>with the ingredients shown, so I can add them here!</strong></h2>
-      <div>
-        <select id="dropdown1" class="item-align-left" onchange="cook(1);">
+      <div class="container">
+        <select id="dropdown1" onchange="cook(1);">
           <option value="">No Item</option>
         </select>
-        <br><br>
-        <img name="item1" class="item-align-left">
-        <p id="desc1" class="item-align-left">Select first ingredient!</p>
-      </div>
-      <br><br><br><br><br><br>
-      <div>
-        <select id="dropdown2" class="item-align-left" onchange="cook(2);">
+        <select id="dropdown2" onchange="cook(2);">
           <option value="">No Item</option>
         </select>
-        <br><br>
-        <img name="item2" class="item-align-left">
-        <p id="desc2" class="item-align-left">Select second ingredient!</p>
       </div>
-      <br><br><br>
-      <div>
-        <br><br>
-        <img name="item3" class="item-align-left">
-        <p id="desc3" class="item-align-left">The output will be displayed here.</p>
+
+      <div class="container">
+        <img name="item1" class="item">
+        <p id="desc1" class="item"></p>
+        <img name="item2" class="item">
+        <p id="desc2" class="item"></p>
+      </div>
+      <div class="container">
+        <img name="item3" class="item">
+        <p id="desc3" class="item">The output will be displayed here.</p>
       </div>
       <h2>
         <a href="credits.html" target="_self">
-          <p color=white>Credits</p>
+          <p>Credits</p>
         </a>
       </h2>
     </section>

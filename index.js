@@ -15,8 +15,8 @@ while (modEntries.length > 0) {
 
 //backgrounds
 const backgrounds = [
-  '/img/bg.png',
-  '/img/bg_mario.png'
+  "/img/bg.png",
+  "/img/bg_mario.png"
 ];
 
 const randomBackground = backgrounds[Math.floor(Math.random() * backgrounds.length)];
@@ -26,22 +26,18 @@ function cook(a) {
   var e = document.getElementById("dropdown" + a);
   var value = e.value;
   var text = e.options[e.selectedIndex].text;
-  console.log(value + a);
+  console.log("Input " + a + ": " + value);
   document["item" + a].src = (value != "" && "/img/items/" + value + ".png" || "");
 
-  let desc = document.getElementById('desc' + a);
+  let desc = document.getElementById("desc" + a);
   desc.innerHTML = itemData[value];
   inputs[a-1] = value
 
-  if (inputs[0] < inputs[1]) {
-    output = inputs[0] + "-" + inputs[1];
-  } else {
-    output = inputs[1] + "-" + inputs[0];
-  }
-  console.log(output);
+  output = (inputs[0] < inputs[1]) && (inputs[0] + "-" + inputs[1]) || (inputs[1] + "-" + inputs[0]);
+  console.log("Recipe: " + output);
 
   document["item3"].src = "/img/items/" + (recipes[output] || "mistake") + ".png";
-  desc = document.getElementById('desc3');
+  desc = document.getElementById("desc3");
   desc.innerHTML = itemData[recipes[output] || "mistake"];
 
 }
