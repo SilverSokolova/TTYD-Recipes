@@ -24,33 +24,42 @@ document.body.style.backgroundImage = `url(${randomBackground})`;
 
 function cook(a) {
   var e = document.getElementById("dropdown" + a);
-  var value = e.value;
+  var value = doString(e.value);
   var text = e.options[e.selectedIndex].text;
   console.log("Input " + a + ": " + value);
+
+  const itemName = doString(itemData[value][0]);
+  const itemDesc = doString(itemData[value][1]);
   document["item" + a].src = (value != "" && "/img/items/" + value + ".png" || "");
 
   let desc = document.getElementById("desc" + a);
-  desc.innerHTML = itemData[value];
+  desc.innerHTML = "<strong>" + itemName + "</strong><br>" + itemDesc;
   inputs[a-1] = value
 
   output = (inputs[0] < inputs[1]) && (inputs[0] + "-" + inputs[1]) || (inputs[1] + "-" + inputs[0]);
   console.log("Recipe: " + output);
 
-  document["item3"].src = "/img/items/" + (recipes[output] || "mistake") + ".png";
   desc = document.getElementById("desc3");
-  desc.innerHTML = itemData[recipes[output] || "mistake"];
+  let outputItem = doString(recipes[output] || "mistake");
+  let outputName = doString(itemData[outputItem][0]);
+  let outputDesc = doString(itemData[outputItem][1]);
+  document["item3"].src = "/img/items/" + (outputItem || "mistake") + ".png";
+  desc.innerHTML = "<strong>" + outputName + "</strong><br>" + outputDesc;
+};
 
-}
-
+function doString(str) {
+  str = str || "";
+  return str.replace(/\$/g, "");
+};
 
 // Function to create options
-function createOptions(selectElement, optionsArray) {
-  optionsArray.forEach(option => {
+function createOptions(selectElement) {
+  Object.entries(itemData).forEach(([key, value]) => {
     const optionElement = document.createElement("option");
-    optionElement.textContent = option[0];
-    optionElement.value = option[1];
+    optionElement.value = key;
+    optionElement.textContent = doString(value[0]);
     selectElement.appendChild(optionElement);
-  });
+  })
 }
 
 // Get references to the select elements
@@ -60,5 +69,5 @@ const dropdown2 = document.getElementById("dropdown2");
 // Populate dropdowns with options
 const inputs = ["", ""];
 let output;
-createOptions(dropdown1, options);
-createOptions(dropdown2, options);
+createOptions(dropdown1);
+createOptions(dropdown2);
