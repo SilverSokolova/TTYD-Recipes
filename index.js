@@ -15,12 +15,12 @@ while (modEntries.length > 0) {
 
 //backgrounds
 const backgrounds = [
-  "",
-  "_mario"
+  "img/bg.png",
+  "img/bg_mario.png"
 ];
 
 const randomBackground = backgrounds[Math.floor(Math.random() * backgrounds.length)];
-document.body.style.backgroundImage = "img/bg" + `url(${randomBackground})` + ".png";
+document.body.style.backgroundImage = `url(${randomBackground})`;
 
 function cook(a) {
   var e = document.getElementById("dropdown" + a);

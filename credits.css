@@ -22,7 +22,7 @@
 
 #mods img {
   background: #1f4ff4; /* #fa1d1e; */
-  background-image: url('/img/modIcons/backing.png');
+  /*background-image: url('/img/modIcons/backing.png');*/
   background-size: cover;
   margin-bottom: 20px;
   border: 3px solid grey;
