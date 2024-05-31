@@ -1,5 +1,18 @@
+//thunder bolt/rage for trial stew recipe confirmed by Kappy?
 //sorted by type and strength. for items that restore hp and fp, use the sum of both
 //For the $'s, we can't put anything else in the name because they'll be treated as a recipe input. $ is treated as no character
+
+/*
+  const itemData = {
+    "mushroom": {
+      "strings": {
+        "name": "Mushroom",
+        "description": "A feel-good mushroom.<br>Replenishes 5 HP."
+      },
+      "makesSpaceFood": true
+    }
+  }
+*/
 const itemData = {
   "point_swap": ["Point Swap", "Swaps a partner's HP and FP.<br>(Cannot exceed max.)"],
   "": ["",""],
@@ -79,6 +92,14 @@ const itemData = {
   "gold_bar": ["Gold Bar", "A gold bar."],
   "ruin_powder": ["Ruin Powder"],
   "hottest_dog": ["New Switch Recipe", "<strong>Hottest Dog</strong><br>no desc"],
+  "heartful_cake": ["Heartful Cake", ""],
+  "couple's_cake": ["Couple's Cake", ""],
+  "snow_bunny": ["Snow Bunny", ""],
+  "zess_dynamite": ["Zess Dynamite", ""],
+  "egg_bomb": ["Egg Bomb", ""],
+  "coconut_bomb": ["Coconut Bomb", ""],
+  "mystic_egg": ["Mystic Egg", ""],
+  "peachy_peach": ["Peachy Peach", ""],
   "mystery_output": ["Random Item", "<strong>The result of cooking a mystery.</strong><br><u>Mistake</u> (very common)<br>Honey Mushroom<br>Life Mushroom"]
 };
 
@@ -97,8 +118,14 @@ const recipes = {
   "-fire_flower": "spicy_soup",
   "-mystery": "mystery_output",
   "-life_mushroom": "mushroom_roast",
+  "-slow_mushroom": "mushroom_roast",
   "-cake_mix": "mousse_cake",
 
-
-  "cake_mix-ruin_powder": "heartful_cake"
+  "hot_dog-hot_sauce": "hottest_dog",
+  "cake_mix-ruin_powder": "heartful_cake",
+  "snow_bunny-spicy_soup": "couple's_cake",
+  "golden-leaf_ice-storm": "snow_bunny",
+  "coconut_bomb-egg_bomb": "zess_dynamite",
+  "fire_flower-mystic_egg": "egg_bomb",
+  "coconut-fire_flower": "coconut_bomb"
 }
