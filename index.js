@@ -15,12 +15,12 @@ while (modEntries.length > 0) {
 
 //backgrounds
 const backgrounds = [
-  "/img/bg.png",
-  "/img/bg_mario.png"
+  "",
+  "_mario"
 ];
 
 const randomBackground = backgrounds[Math.floor(Math.random() * backgrounds.length)];
-document.body.style.backgroundImage = `url(${randomBackground})`;
+document.body.style.backgroundImage = "img/bg" + `url(${randomBackground})` + ".png";
 
 function cook(a) {
   var e = document.getElementById("dropdown" + a);
@@ -30,7 +30,7 @@ function cook(a) {
 
   const itemName = doString(itemData[value][0]);
   const itemDesc = doString(itemData[value][1]);
-  document["item" + a].src = (value != "" && "/img/items/" + value + ".png" || "");
+  document["item" + a].src = (value != "" && "img/items/" + value + ".png" || "");
 
   let desc = document.getElementById("desc" + a);
   desc.innerHTML = "<strong>" + itemName + "</strong><br>" + itemDesc;
@@ -43,7 +43,7 @@ function cook(a) {
   let outputItem = doString(recipes[output] || "mistake");
   let outputName = doString(itemData[outputItem][0]);
   let outputDesc = doString(itemData[outputItem][1]);
-  document["item3"].src = "/img/items/" + (outputItem || "mistake") + ".png";
+  document["item3"].src = "img/items/" + (outputItem || "mistake") + ".png";
   desc.innerHTML = "<strong>" + outputName + "</strong><br>" + outputDesc;
 };
 
