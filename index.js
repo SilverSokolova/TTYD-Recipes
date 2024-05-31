@@ -40,7 +40,7 @@ function cook(a) {
   console.log("Recipe: " + output);
 
   desc = document.getElementById("desc3");
-  let outputItem = doString(recipes[output] || "mistake");
+  let outputItem = doString(failedRecipes[output] && "mistake_verified" || recipes[output] || "mistake");
   let outputName = doString(itemData[outputItem][0]);
   let outputDesc = doString(itemData[outputItem][1]);
   document["item3"].src = "img/items/" + (outputItem || "mistake") + ".png";
@@ -62,6 +62,8 @@ function createOptions(selectElement) {
   })
 }
 
+itemData["mistake_verified"] = [...itemData["mistake"]];
+
 // Get references to the select elements
 const dropdown1 = document.getElementById("dropdown1");
 const dropdown2 = document.getElementById("dropdown2");
@@ -71,3 +73,7 @@ const inputs = ["", ""];
 let output;
 createOptions(dropdown1);
 createOptions(dropdown2);
+
+// Do this after we add it to the list
+itemData["mistake"][1] = "<strong>(Unconfirmed)</strong><br>" + itemData["mistake"][1];
+itemData["mistake_verified"][1] = "<strong>(Confirmed)</strong><br>" + itemData["mistake_verified"][1];
