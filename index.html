@@ -15,11 +15,14 @@
     <div class="overlay"></div>
     <section id="cooking">
       <h2>TTYD (Switch) Interactive <strong>INCOMPLETE</strong> Cookbook<br>For help, message 'silversokolova' on Discord!<br><br><strong>DM me videos of you cooking a recipe,<br>with the ingredients shown, so I can add them here!</strong></h2>
-      <h2>
-        <a href="credits.html" target="_self">
+      <div class="bottom-right-container">
+        <img src="img/gamecube.png" width=50px title="Click to swap sprites!" onclick="swapSprites();" class="bottom-right">
+        <a href="credits.html" class="bottom-right" target="_self">
           <p>Credits</p>
         </a>
-      </h2>
+      </div>
+      
+
       <div class="container">
         <select id="dropdown1" onchange="cook(1);">
           <option value="">No Item</option>

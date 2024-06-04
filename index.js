@@ -30,7 +30,7 @@ function cook(a) {
 
   const itemName = doString(itemData[value][0]);
   const itemDesc = doString(itemData[value][1]);
-  document["item" + a].src = (value != "" && "img/items/" + value + ".png" || "");
+  document["item" + a].src = (value != "" && "img/items/" + spritePath + value + ".png" || "");
 
   let desc = document.getElementById("desc" + a);
   desc.innerHTML = "<strong>" + itemName + "</strong><br>" + itemDesc;
@@ -43,7 +43,7 @@ function cook(a) {
   let outputItem = doString(failedRecipes[output] && "mistake_verified" || recipes[output] || "mistake");
   let outputName = doString(itemData[outputItem][0]);
   let outputDesc = doString(itemData[outputItem][1]);
-  document["item3"].src = "img/items/" + (outputItem || "mistake") + ".png";
+  document["item3"].src = "img/items/" + spritePath + (outputItem || "mistake") + ".png";
   desc.innerHTML = "<strong>" + outputName + "</strong><br>" + outputDesc;
 };
 
@@ -77,3 +77,17 @@ createOptions(dropdown2);
 // Do this after we add it to the list
 itemData["mistake"][1] = "<strong>(Unconfirmed)</strong><br>" + itemData["mistake"][1];
 itemData["mistake_verified"][1] = "<strong>(Confirmed)</strong><br>" + itemData["mistake_verified"][1];
+
+//Sprite-changing stuff
+var spritePath = "";
+
+function swapSprites() {
+  spritePath = spritePath === "" && "gcn/" || "";
+  for (let i = 1; i <= 3; i++) {
+    document["item" + i].src = updateImage(document["item" + i].src);
+  }
+}
+
+function updateImage(img) {
+  return spritePath === "" && img.replace("gcn/", "") || img.replace("items/", "items/gcn/");
+}

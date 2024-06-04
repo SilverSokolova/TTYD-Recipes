@@ -1,3 +1,7 @@
+body {
+  overflow: auto;
+}
+
 /*Slap an overlay in the middle*/
 .overlay {
   position: absolute;
