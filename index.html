@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>TTYD Interactive Cookbook</title>
     <link rel="stylesheet" href="main.css">
-      <link rel="icon" href="/favicon.png" type="image/x-icon">
+      <link rel="icon" href="favicon.png" type="image/x-icon">
       <!-- Additional sizes for better quality across devices 
       <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
       <link rel="icon" href="/favicon-48x48.png" sizes="48x48" type="image/png">
@@ -16,7 +16,7 @@
     <section id="cooking">
       <h2>TTYD (Switch) Interactive <strong>INCOMPLETE</strong> Cookbook<br>For help, message 'silversokolova' on Discord!<br><br><strong>DM me videos of you cooking a recipe,<br>with the ingredients shown, so I can add them here!</strong></h2>
       <div class="bottom-right-container">
-        <img src="img/gamecube.png" width=50px title="Click to swap sprites!" onclick="swapSprites();" class="bottom-right">
+        <img src="img/gamecube.png" width=50px height=50px title="Click to swap sprites!" onclick="swapSprites();" class="bottom-right">
         <a href="credits.html" class="bottom-right" target="_self">
           <p>Credits</p>
         </a>
@@ -27,7 +27,7 @@
         <select id="dropdown1" onchange="cook(1);">
           <option value="">No Item</option>
         </select>
-        <select id="dropdown2" onchange="cook(2);">
+        <select id="dropdown2" onchange="cook(2);" disabled=true>
           <option value="">No Item</option>
         </select>
       </div>

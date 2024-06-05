@@ -1,6 +1,3 @@
-//TODO: make selecting the second item impossible unless there's a first
-//TODO: make selecting the first item reset the second THEN limit its options to compatible ingredients
-
 //sorted by type and strength. for items that restore hp and fp, use the sum of both
 //For the $'s, we can't put anything else in the name because they'll be treated as a recipe input. $ is treated as no character
 
@@ -45,11 +42,13 @@ const itemData = {
   "maple_syrup": ["Maple Syrup", "A deliciously sweet syrup.<br>Replenishes 10 FP."],
   "golden_leaf": ["Golden Leaf", "A weird leaf found in Creepy Steeple.<br>Replenishes 10 FP."],
   "mousse_cake": ["Mousse Cake", "A cake made by Zess T.<br>Replenishes 15 FP.<br><em>Made by cooking Cake Mix.</em>"],
+  "koopa_bun": ["Koopa Bun", "A dumpling made by Zess T.<br>Replenishes 15 FP.<br><em>Made by mixing a Turtley Leaf with a<br>Keel Mango.</em>"],
   "healthy_salad": ["Healthy Salad", "A Zess T. salad. Cures conditions like<br>poisoning and replenishes 15 FP."],
   "electro_pop": ["Electro Pop", "Candy made by Zess T. Replenishes<br>15 FP and makes you electrified.<br><em>Made by mixing Cake Mix with a<br>Volt Shroom.</em>"],
   "icicle_pop": ["Icicle Pop", "A dessert made by Zess T.<br>Replenishes 15 FP.<br>Be careful- eating it can sometimes freeze you!<br><em>Made by mixing Honey Syrup with an<br>Ice Storm.</em>"],
   "honey_candy": ["Honey Candy", "Candy made by Zess T.<br>Replenishes 20 FP.<br><em>Made by mixing Honey Syrup with<br>Cake Mix.</em>"],
   "fire_pop": ["Fire Pop", "Candy made by Zess T.<br>Replenishes 20 FP.<br><em>Made by mixing Cake Mix with a<br>Fire Flower.</em>"],
+  "heartful_cake": ["Heartful Cake", "A Zess T. cake.<br>Replenishes 20 FP<br>but also softens you.<br><em>Made by mixing Cake Mix and<br>Ruin Powder.</em>"],
   "jammin'_jelly": ["Jammin' Jelly", "A highly nutritious snack.<br>Restores 50 FP."],
   "jelly_candy": ["Jelly Candy", "Candy made by Zess T.<br>Replenishes 64 FP.<br><em>Made by mixing Jammin' Jelly with<br>Cake Mix.</em>"],
 
@@ -111,7 +110,7 @@ const itemData = {
   "pow_block": ["POW Block", "Attacks all enemies and does 2<br>damage, flipping shelled enemies."],
   "fire_flower": ["Fire Flower", "Attacks all enemies with fireballs that<br>do 3 damage. Does not actually burn enemies."],
   "ice_storm": ["Ice Storm", "Blows a cold wind at all enemies that<br>does 3 damage and freezes them."],
-  "courage_meal": ["Courage Meal", "Hard food made by Zess T.<br>THrow it to attack an enemy for 4 damage.<br><em>Made by mixing a Courage Shell with<br>a Zess Dinner.</em>"],
+  "courage_meal": ["Courage Meal", "Hard food made by Zess T.<br>Throw it to attack an enemy for 4 damage.<br><em>Made by mixing a Courage Shell with<br>a Zess Dinner.</em>"],
   "earth_quake": ["Earth Quake", "Attacks all enemies on the ground or<br>ceiling and does 5 damage."],
   "hp_drain": ["HP Drain", "Does 5 damage to a foe while<br>replenishing your own HP by 5."],
   "thunder_bolt": ["Thunder Bolt", "Drops lightning on an enemy and<br>does 5 damage."],
@@ -130,6 +129,7 @@ const itemData = {
   "boo's_sheet": ["Boo's Sheet", "Temporarily makes a party member<br>invisible, warding against attacks."],
   "repel_cape": ["Repel Cape", "Temporarily makes a party member<br>dodgy so they are harder to hit."],
   "spite_pouch": ["Spite Pouch", "Temporarily does half damage to all<br>enemies who attack directly. Won't<br>work on some enemies!"],
+  "mushroom_broth": ["Mushroom Broth", "Broth brewed by Zess T. Gradually<br>replenishes HP but also softens you.<br>Made by mixing a Slow Mushroom with<br>a Golden Leaf."],
 
   //debuffing
   "$$$$$$$$$$": ["", ""],
@@ -139,6 +139,7 @@ const itemData = {
   "mr._softener": ["Mr. Softener", "Temporarily softens up an enemy,<br>decreasing their Defense."],
   "mini_mr._mini": ["Mini Mr. Mini", "Temporarily makes enemies tiny,<br>dropping their Attack power."],
   "stopwatch": ["Stopwatch", "Temporarily immobilizes all enemies."],
+  "ruin_powder": ["Ruin Powder", "Temporarily confuses all enemies,<br>hindering their actions."],
 
   //other
   "$$$$$$$$$$$$": ["", ""],
@@ -150,14 +151,14 @@ const itemData = {
   "mystery": ["Mystery", "Who knows what this does? Take a<br>chance and find out!"],
   "peach_tart": ["Peach Tart", "A Zess T. dessert. Makes you<br>electrified, dodgy, or sleepy.<br><em>Made by mixing Cake Mix with a<br>Peachy Peach.</em>"],
   "gold_bar": ["Gold Bar", "A gold bar."],
-  "ruin_powder": ["Ruin Powder"],
+  "gold_bar_x3": ["Gold Bar X 3", "Three gold bars."],
   "hottest_dog": ["New Switch Recipe", "<strong>Hottest Dog</strong><br>no desc"],
-  "heartful_cake": ["Heartful Cake", ""],
-  "couple's_cake": ["Couple's Cake", ""],
-  "snow_bunny": ["Snow Bunny", ""],
-  "zess_dynamite": ["Zess Dynamite", ""],
-  "egg_bomb": ["Egg Bomb", ""],
-  "mystic_egg": ["Mystic Egg", ""],
+  "couple's_cake": ["Couple's Cake", "?"],
+  "snow_bunny": ["Snow Bunny", "?"],
+  "zess_dynamite": ["Zess Dynamite", "?"],
+  "egg_bomb": ["Egg Bomb", "?"],
+  "mystic_egg": ["Mystic Egg", "?"],
+  "inky_sauce": ["Inky Sauce", "?"],
   "mystery_output": ["Random Item", "<strong>The result of cooking a mystery.</strong><br><u>Mistake</u> (very common)<br>Honey Mushroom<br>Life Mushroom"]
 };
 
@@ -172,6 +173,7 @@ const recipes = {
   "cake_mix-slow_mushroom": "mushroom_cake",
   "cake_mix-life_mushroom": "mushroom_cake",
 
+  "cake_mix-honey_syrup": "honey_candy",
   "cake-mix-maple_syrup": "zess_cookie",
   "cake_mix-jammin'_jelly": "jelly_candy",
   "cake_mix-gradual_syrup": "zess_cookie",
@@ -180,7 +182,7 @@ const recipes = {
   "cake_mix-fire_flower": "fire_pop",
   "cake_mix-peachy_peach": "peach_tart",
   "cake_mix-coconut": "coco_candy",
-  "cake_mix-mango": "mango_delight",
+  "cake_mix-keel_mango": "mango_delight",
   "cake_mix-volt_mushroom": "electro_pop",
 
   "couple's_cake-poison_mushroom": "trial_stew",
@@ -193,6 +195,9 @@ const recipes = {
   "coconut_keel-mango": "fresh_juice",
 
   "courage_shell-zess_special": "courage_meal",
+  "courage_shell-zess_dinner": "courage_meal",
+
+  "courage_meal-dried_bouquet": "courage_shell",
   
   //D
   "dried_bouquet-trial_stew": "poison_mushroom",
@@ -207,15 +212,18 @@ const recipes = {
   "-gradual_syrup": "fresh_juice",
   "gradual_syrup-super_mushroom": "zess_dinner",
   "gradual_syrup-ultra_mushroom": "zess_special",
-  "golden-leaf_ice-storm": "snow_bunny",
+
+  "golden_leaf_ice-storm": "snow_bunny",
+  "golden_leaf-slow_mushroom": "mushroom_broth",
 
   //H
   "-honey_syrup": "fresh_juice",
+  "honey_syrup-mushroom": "honey_mushroom",
   "honey_syrup-ultra_mushroom": "honey_ultra",
   "honey_syrup-life_mushroom": "honey_super",
   "honey_syrup-peachy_peach": "fruit_parfait",
   "honey_syrup-keel_mango": "fruit_parfait",
-  "honey_syrup-ice_storm": "Icicle Pop",
+  "honey_syrup-ice_storm": "icicle_pop",
 
   "hot_dog-hot_sauce": "hottest_dog",
   "horsetail-mushroom": "zess_dinner",
@@ -230,20 +238,29 @@ const recipes = {
   "jammin'_jelly-slow_mushroom": "jelly_super",
   //K
   "-keel_mango": "fresh_juice",
+  "keel_mango-turtley_leaf": "koopa_bun",
+  
   //L
   "-life_mushroom": "mushroom_roast",
   "life_mushroom-maple_syrup": "maple_super",
 
   //M
   "-mushroom": "mushroom_fry",
+  "mushroom-thunder_bolt": "volt_mushroom",
+  "mushroom-thunder_rage": "volt_mushroom",
+
   "-mystery": "mystery_output",
   "maple_syrup-mushroom": "maple_mushroom",
   "mushroom_fry-shooting_star": "meteor_meal",
+  
+  "mr._softener-ultra_mushroom": "dried_mushroom",
 
   //N
   //O
   //P
   "-poison_mushroom": "mushroom_fry",
+  "poison_mushroom-turtley_leaf": "mushroom_broth",
+
   "-peachy_peach": "fresh_juice",
   //Q
   //R
@@ -256,12 +273,9 @@ const recipes = {
   //T
   "-turtley_leaf": "koopa_tea",
   "thunder_bolt-thunder_rage": "trial_stew",
-  "thunder_bolt-mushroom": "volt_mushroom",
-  "thunder_rage-mushroom": "volt_mushroom",
 
   //U
   "-ultra_mushroom": "mushroom_steak",
-  "ultra_mushroom-mr._softener": "dried_mushroom",
 
   //V
   "-volt_mushroom": "mushroom_fry",
@@ -274,13 +288,27 @@ const recipes = {
   //swaps
   "gradual_syrup-point_swap": "honey_syrup",
   "honey_syrup-point_swap": "mushroom",
-  "mushroom_point_swap": "honey_syrup",
+  "mushroom-point_swap": "honey_syrup",
 
   "point_swap-repel_cape": "boo's_sheet",
   "boo's_sheet-point_swap": "repel_cape",
 
   "earth_quake-point_swap": "thunder_bolt",
-  "thunder_bolt-point_swap": "earth_quake"
+  "point_swap-thunder_bolt": "earth_quake",
+
+  "point_swap-spite_pouch": "ruin_powder",
+  "point_swap-ruin_powder": "spite_pouch",
+
+  "point_swap-shooting_star": "thunder_rage",
+  "point_swap-thunder_rage": "shooting_star",
+
+  "mr._softener-point_swap": "courage_shell",
+  "courage_shell-point_swap": "mr._softener",
+
+  "point_swap-slow_mushroom": "poison_mushroom",
+
+  "point_swap-power_punch": "mini_mr._mini",
+  "mini_mr._mini-point_swap": "power_punch"
 }
 
 const failedRecipes = {
