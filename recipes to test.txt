@@ -11,3 +11,19 @@ Volt Shroom
     Life Shroom
     Super Shroom
     Ultra Shroom
+    
+Inky Sauce
+  Hot Sauce +
+    Koopa Tea
+    Shroom Broth
+    Zess Tea
+    
+Inky Pasta
+  Inky Sauce +
+    Koopasta
+
+Heartful Cake
+  Peachy Peach + Ruin Powder
+  
+Jelly Super
+  Slow Shroom + Jammin' Jelly
