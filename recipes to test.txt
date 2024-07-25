@@ -15,15 +15,16 @@ Volt Shroom
 Inky Sauce
   Hot Sauce +
     Koopa Tea
-    Shroom Broth
-    Zess Tea
-    
-Inky Pasta
-  Inky Sauce +
-    Koopasta
 
-Heartful Cake
-  Peachy Peach + Ruin Powder
   
 Jelly Super
   Slow Shroom + Jammin' Jelly
+    
+Healthy Salad
+  Golden Leaf + Turtley Leaf
+  
+Zess Tea
+  Maple Syrup + Jammin' Jelly
+  
+Courage Meal
+  Courage Shell + Zess Deluxe

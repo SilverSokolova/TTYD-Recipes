@@ -287,9 +287,13 @@ const recipes = {
 
   "healthy_salad-mushroom_roast": "zess_special",
 
+  "honey_syrup-super_mushroom": "honey_super",
+
   "-hot_sauce": "tasty_tonic",
   "hot_sauce-tasty_tonic": "inky_sauce",
   "hot_sauce-turtley_leaf": "inky_sauce",
+  "hot_sauce-mushroom_broth": "inky_sauce",
+  "hot_sauce-zess_tea": "inky_sauce",
 
   "hot_sauce-koopasta": "spicy_pasta",
   "hot_sauce-spaghetti": "spicy_pasta",
